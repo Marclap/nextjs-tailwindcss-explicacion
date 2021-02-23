@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-grado",
+  "version": "0.0.1",
+  "description": "Documentacion de como instalar y configurar la implementacion basica del proyecto de grado",
+  "main": "index.js",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "/proyecto-grado",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}

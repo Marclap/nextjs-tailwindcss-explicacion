@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Instalar y configurar Tailwind CSS en un proyecto en Next.js | eStreet</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Documentacion de como instalar y configurar la implementacion basica del proyecto de grado">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.6b81e065.css" as="style"><link rel="preload" href="/assets/js/app.c239d3a1.js" as="script"><link rel="preload" href="/assets/js/2.a241e498.js" as="script"><link rel="preload" href="/assets/js/10.f758f8c1.js" as="script"><link rel="prefetch" href="/assets/js/11.0adaf5ba.js"><link rel="prefetch" href="/assets/js/3.6fb79843.js"><link rel="prefetch" href="/assets/js/4.0aea1b04.js"><link rel="prefetch" href="/assets/js/5.39822803.js"><link rel="prefetch" href="/assets/js/6.c45c3b51.js"><link rel="prefetch" href="/assets/js/7.6dee2e5c.js"><link rel="prefetch" href="/assets/js/8.0d6d950e.js"><link rel="prefetch" href="/assets/js/9.46e2427e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6b81e065.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">eStreet</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Inicio
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guía
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Inicio
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guía
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" aria-current="page" class="sidebar-link">Introducción</a></li><li><a href="/guide/instalacionNext.html" class="sidebar-link">Instalación de Next.js</a></li><li><a href="/guide/instalacionTailwind.html" aria-current="page" class="active sidebar-link">Instalar y configurar Tailwind CSS en un proyecto en Next.js</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/instalacionTailwind.html#instalacion" class="sidebar-link">Instalación</a></li><li class="sidebar-sub-header"><a href="/guide/instalacionTailwind.html#creacion-de-los-archivos-de-configuracion" class="sidebar-link">Creación de los archivos de configuración</a></li><li class="sidebar-sub-header"><a href="/guide/instalacionTailwind.html#configurando-los-archivos" class="sidebar-link">Configurando los archivos</a></li></ul></li><li><a href="/guide/instalacionGithub.html" class="sidebar-link">Instalación desde un repositorio de GitHub</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="instalar-y-configurar-tailwind-css-en-un-proyecto-en-next-js"><a href="#instalar-y-configurar-tailwind-css-en-un-proyecto-en-next-js" class="header-anchor">#</a> Instalar y configurar Tailwind CSS en un proyecto en Next.js</h1> <h2 id="instalacion"><a href="#instalacion" class="header-anchor">#</a> Instalación</h2> <p>En la terminal escribimos lo siguiente:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> -D tailwindcss@latest postcss@latest autoprefixer@latest
+</code></pre></div><h2 id="creacion-de-los-archivos-de-configuracion"><a href="#creacion-de-los-archivos-de-configuracion" class="header-anchor">#</a> Creación de los archivos de configuración</h2> <p>Esto generará los archivos <code>tailwind.config.js</code> y <code>postcss.config.js</code></p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx tailwindcss init -p
+</code></pre></div><h2 id="configurando-los-archivos"><a href="#configurando-los-archivos" class="header-anchor">#</a> Configurando los archivos</h2> <p>Abrimos el archivo <code>taiwind.config.js</code> y editamos lo siguiente:</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token operator">-</span>   purge<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token operator">+</span>   purge<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'./page/**/*.{js, ts, jsx, tsx}'</span><span class="token punctuation">,</span> <span class="token string">'./components/**/*.{js,ts,jsx,tsx}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    darkMode<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//or 'media' or 'class'</span>
+    theme<span class="token operator">:</span> <span class="token punctuation">{</span>
+        extend<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    variants<span class="token operator">:</span> <span class="token punctuation">{</span>
+        extend<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Luego en el archivo <code>globals.css</code> ubicado en la carpeta styles eliminar todo y agregar:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@tailwind</span> base<span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@tailwind</span> components<span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@tailwind</span> utilities<span class="token punctuation">;</span></span>
+</code></pre></div><p>Además eliminar el archivo <code>Home.modules.css</code>, ya no nos servirá en el proyecto.</p> <p>Luego ir al archivo <code>index.js</code> ubicado en la carpeta <code>pages</code> y eliminar la instancia de los estilos que acabamos de elimiar y todas sus herencias, es decir, pasar de esto:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Head <span class="token keyword">from</span> <span class="token string">'next/head'</span>
+<span class="token keyword">import</span> styles <span class="token keyword">from</span> <span class="token string">'../styles/Home.module.css'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>container<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Head<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Create Next App<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">&quot;icon&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;/favicon.ico&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Head<span class="token operator">&gt;</span>
+
+      <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>main<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h1 className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          Welcome to <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;https://nextjs.org&quot;</span><span class="token operator">&gt;</span>Next<span class="token punctuation">.</span>js<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>p className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>description<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          Get started by editing<span class="token punctuation">{</span><span class="token string">' '</span><span class="token punctuation">}</span>
+          <span class="token operator">&lt;</span>code className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>code<span class="token punctuation">}</span><span class="token operator">&gt;</span>pages<span class="token operator">/</span>index<span class="token punctuation">.</span>js<span class="token operator">&lt;</span><span class="token operator">/</span>code<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>grid<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;https://nextjs.org/docs&quot;</span> className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>card<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h3<span class="token operator">&gt;</span>Documentation <span class="token operator">&amp;</span>rarr<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Find <span class="token keyword">in</span><span class="token operator">-</span>depth information about Next<span class="token punctuation">.</span>js features and <span class="token constant">API</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+
+          <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;https://nextjs.org/learn&quot;</span> className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>card<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h3<span class="token operator">&gt;</span>Learn <span class="token operator">&amp;</span>rarr<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Learn about Next<span class="token punctuation">.</span>js <span class="token keyword">in</span> an interactive course <span class="token keyword">with</span> quizzes<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+
+          <span class="token operator">&lt;</span>a
+            href<span class="token operator">=</span><span class="token string">&quot;https://github.com/vercel/next.js/tree/master/examples&quot;</span>
+            className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>card<span class="token punctuation">}</span>
+          <span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h3<span class="token operator">&gt;</span>Examples <span class="token operator">&amp;</span>rarr<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Discover and deploy boilerplate example Next<span class="token punctuation">.</span>js projects<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+
+          <span class="token operator">&lt;</span>a
+            href<span class="token operator">=</span><span class="token string">&quot;https://vercel.com/new?utm_source=create-next-app&amp;utm_medium=default-template&amp;utm_campaign=create-next-app&quot;</span>
+            className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>card<span class="token punctuation">}</span>
+          <span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h3<span class="token operator">&gt;</span>Deploy <span class="token operator">&amp;</span>rarr<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+              Instantly deploy your Next<span class="token punctuation">.</span>js site to a <span class="token keyword">public</span> <span class="token constant">URL</span> <span class="token keyword">with</span> Vercel<span class="token punctuation">.</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+
+      <span class="token operator">&lt;</span>footer className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>footer<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>a
+          href<span class="token operator">=</span><span class="token string">&quot;https://vercel.com?utm_source=create-next-app&amp;utm_medium=default-template&amp;utm_campaign=create-next-app&quot;</span>
+          target<span class="token operator">=</span><span class="token string">&quot;_blank&quot;</span>
+          rel<span class="token operator">=</span><span class="token string">&quot;noopener noreferrer&quot;</span>
+        <span class="token operator">&gt;</span>
+          Powered by<span class="token punctuation">{</span><span class="token string">' '</span><span class="token punctuation">}</span>
+          <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;/vercel.svg&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;Vercel Logo&quot;</span> className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>logo<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>footer<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>A esto:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Head <span class="token keyword">from</span> <span class="token string">&quot;next/head&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/instalacionNext.html" class="prev">
+        Instalación de Next.js
+      </a></span> <span class="next"><a href="/guide/instalacionGithub.html">
+        Instalación desde un repositorio de GitHub
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c239d3a1.js" defer></script><script src="/assets/js/2.a241e498.js" defer></script><script src="/assets/js/10.f758f8c1.js" defer></script>
+  </body>
+</html>
